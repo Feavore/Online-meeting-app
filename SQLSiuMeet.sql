@@ -15,7 +15,7 @@ CREATE TABLE Rooms (
 
 -- Create the Participants table
 CREATE TABLE Participants (
-    caseID INT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     roomID INT NOT NULL,
     userID INT NOT NULL,
     hostPermit bit NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE Device (
 
 -- Create the LoginLog table
 CREATE TABLE LoginLog (
-    logID INT PRIMARY KEY,
+    ID INT PRIMARY KEY,
     deviceID INT NOT NULL,
     userID INT NOT NULL,
     timeStart DATETIME NOT NULL,
