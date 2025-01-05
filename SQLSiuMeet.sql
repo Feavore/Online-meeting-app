@@ -4,7 +4,7 @@ CREATE TABLE Users (
     userID INT PRIMARY KEY,
     account VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    permission VARCHAR(50) NOT NULL
+    role VARCHAR(50) NOT NULL
 );
 
 -- Create the Room table
@@ -18,14 +18,14 @@ CREATE TABLE Participants (
     caseID INT PRIMARY KEY,
     roomID INT NOT NULL,
     userID INT NOT NULL,
-	adminPermission bit NOT NULL,
+    hostPermit bit NOT NULL,
     FOREIGN KEY (roomID) REFERENCES Rooms(roomID) ON DELETE CASCADE,
     FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE CASCADE
 );
 
 CREATE TABLE Device (
     deviceID INT PRIMARY KEY,
-    deviceType VARCHAR(255) NOT NULL
+    deviceType VARCHAR(255)
 );
 
 -- Create the LoginLog table
